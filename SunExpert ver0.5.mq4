@@ -5,112 +5,118 @@
 //+------------------------------------------------------------------+
 #property copyright "Alexander Strokov"
 #property link      "strokovalexander.fx@gmail.com"
-#property version   "0.3"
+#property version   "0.6"
 #property strict
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
 extern string Пapаметры="Настройки советника";
-extern int LotsBuy=8;
-extern int LotsSell=7;
+extern int LotsBuy=15;
+extern int LotsSell=15;
 extern bool LimitsOn=true;
-extern int NumberLimitOrders=2;
+extern int NumberLimitOrders=1;
 extern bool TPnoLots=true;
-extern bool TPUpdate=true;
+extern bool TPUpdate=true; //Не реализовано
+extern bool TPUpdateFirstOrder=true;
 extern string Пapаметры1="Параметры ордеров";
 extern bool BuyTrade=true;
 extern bool SellTrade=true;
 extern int TP=10;
 extern int Magic_Number=3213;
-extern string Пapаметры6="Параметры тралинга";
-extern bool TralEnd=true;
-extern int StartTralCount=2;
-extern int StartTralPoints=20;
-extern int SizeTralPoints=10;
-extern string Пapаметры2="Уровни открытия ордеров Buy";
-extern double LevelBuy1=100;
-extern double LevelBuy2=150;
-extern double LevelBuy3=200;
-extern double LevelBuy4=250;
-extern double LevelBuy5=300;
-extern double LevelBuy6=350;
-extern double LevelBuy7=400;
-extern double LevelBuy8=450;
-extern double LevelBuy9=500;
-extern double LevelBuy10=550;
-extern double LevelBuy11=600;
-extern double LevelBuy12=700;
-extern double LevelBuy13=800;
-extern double LevelBuy14=850;
-extern double LevelBuy15=900;
-extern double LevelBuy16=1000;
-extern double LevelBuy17=1100;
-extern double LevelBuy18=1200;
-extern double LevelBuy19=1300;
-extern double LevelBuy20=1400;
-extern string Пapаметры3="Уровни открытия ордеров Sell";
-extern double LevelSell1=100;
-extern double LevelSell2=150;
-extern double LevelSell3=200;
-extern double LevelSell4=250;
-extern double LevelSell5=300;
-extern double LevelSell6=350;
-extern double LevelSell7=400;
-extern double LevelSell8=450;
-extern double LevelSell9=500;
-extern double LevelSell10=550;
-extern double LevelSell11=600;
-extern double LevelSell12=700;
-extern double LevelSell13=800;
-extern double LevelSell14=850;
-extern double LevelSell15=900;
-extern double LevelSell16=1000;
-extern double LevelSell17=1100;
-extern double LevelSell18=1200;
-extern double LevelSell19=1300;
-extern double LevelSell20=1400;
-extern string Пapаметры4="Лоты ордеров Buy";
+extern string Пapаметры2="Параметры тралинга для Buy";
+extern bool BuyTralEnd=true;
+extern int BuyStartTralCount=2;
+extern int BuyStartTralPoints=30;
+extern int BuySizeTralPoints=15;
+extern string Пapаметры3="Параметры тралинга для Sell";
+extern bool SellTralEnd=true;
+extern int SellStartTralCount=2;
+extern int SellStartTralPoints=30;
+extern int SellSizeTralPoints=15;
+extern string Пapаметры4="Уровни открытия ордеров Buy";
+extern double LevelBuy1=0;
+extern double LevelBuy2=22.5;
+extern double LevelBuy3=10;
+extern double LevelBuy4=17.5;
+extern double LevelBuy5=10;
+extern double LevelBuy6=10;
+extern double LevelBuy7=23;
+extern double LevelBuy8=10;
+extern double LevelBuy9=15;
+extern double LevelBuy10=20;
+extern double LevelBuy11=30;
+extern double LevelBuy12=28.3;
+extern double LevelBuy13=50;
+extern double LevelBuy14=50;
+extern double LevelBuy15=100;
+extern double LevelBuy16=100;
+extern double LevelBuy17=100;
+extern double LevelBuy18=100;
+extern double LevelBuy19=100;
+extern double LevelBuy20=100;
+extern string Пapаметры5="Уровни открытия ордеров Sell";
+extern double LevelSell1=0;
+extern double LevelSell2=22.5;
+extern double LevelSell3=10;
+extern double LevelSell4=17.5;
+extern double LevelSell5=10;
+extern double LevelSell6=10;
+extern double LevelSell7=23;
+extern double LevelSell8=10;
+extern double LevelSell9=15;
+extern double LevelSell10=20;
+extern double LevelSell11=30;
+extern double LevelSell12=28.3;
+extern double LevelSell13=50;
+extern double LevelSell14=50;
+extern double LevelSell15=100;
+extern double LevelSell16=100;
+extern double LevelSell17=100;
+extern double LevelSell18=100;
+extern double LevelSell19=100;
+extern double LevelSell20=100;
+extern string Пapаметры6="Лоты ордеров Buy";
 extern double LotBuy1=0.1;
-extern double LotBuy2=0.2;
-extern double LotBuy3=0.4;
-extern double LotBuy4=0.6;
-extern double LotBuy5=0.8;
-extern double LotBuy6=1;
-extern double LotBuy7=1.2;
-extern double LotBuy8=1.4;
-extern double LotBuy9=1.6;
-extern double LotBuy10=1.8;
-extern double LotBuy11=2;
-extern double LotBuy12=2.2;
-extern double LotBuy13=2.4;
-extern double LotBuy14=2.6;
-extern double LotBuy15=3;
-extern double LotBuy16=3.2;
-extern double LotBuy17=3.4;
-extern double LotBuy18=3.6;
-extern double LotBuy19=3.8;
-extern double LotBuy20=4;
-extern string Пapаметры5="Лоты ордеров Sell";
+extern double LotBuy2=0.1;
+extern double LotBuy3=0.1;
+extern double LotBuy4=0.1;
+extern double LotBuy5=0.1;
+extern double LotBuy6=0.1;
+extern double LotBuy7=0.1;
+extern double LotBuy8=0.1;
+extern double LotBuy9=0.1;
+extern double LotBuy10=0.1;
+extern double LotBuy11=0.1;
+extern double LotBuy12=0.1;
+extern double LotBuy13=0.1;
+extern double LotBuy14=0.1;
+extern double LotBuy15=0.1;
+extern double LotBuy16=0.1;
+extern double LotBuy17=0.1;
+extern double LotBuy18=0.1;
+extern double LotBuy19=0.1;
+extern double LotBuy20=0.1;
+extern string Пapаметры7="Лоты ордеров Sell";
 extern double LotSell1=0.1;
-extern double LotSell2=0.2;
-extern double LotSell3=0.4;
-extern double LotSell4=0.6;
-extern double LotSell5=0.8;
-extern double LotSell6=1;
-extern double LotSell7=1.2;
-extern double LotSell8=1.4;
-extern double LotSell9=1.6;
-extern double LotSell10=1.8;
-extern double LotSell11=2;
-extern double LotSell12=2.2;
-extern double LotSell13=2.4;
-extern double LotSell14=2.6;
-extern double LotSell15=3;
-extern double LotSell16=3.2;
-extern double LotSell17=3.4;
-extern double LotSell18=3.6;
-extern double LotSell19=3.8;
-extern double LotSell20=4;
+extern double LotSell2=0.1;
+extern double LotSell3=0.1;
+extern double LotSell4=0.1;
+extern double LotSell5=0.1;
+extern double LotSell6=0.1;
+extern double LotSell7=0.1;
+extern double LotSell8=0.1;
+extern double LotSell9=0.1;
+extern double LotSell10=0.1;
+extern double LotSell11=0.1;
+extern double LotSell12=0.1;
+extern double LotSell13=0.1;
+extern double LotSell14=0.1;
+extern double LotSell15=0.1;
+extern double LotSell16=0.1;
+extern double LotSell17=0.1;
+extern double LotSell18=0.1;
+extern double LotSell19=0.1;
+extern double LotSell20=0.1;
 
 
 
@@ -181,17 +187,53 @@ int start()
         }
      }
 
-   if((CountBuy!=0) &&(TPnoLots==true)&& ((ReCountBuy<CountBuy) || (ReCountBuy>CountBuy))){CalculateTotalBuyTP();BuyLimDel();}
+   if((TPUpdate==true)&&(CountBuy!=0) &&(TPnoLots==true)&& ((ReCountBuy<CountBuy) || (ReCountBuy>CountBuy))){CalculateTotalBuyTP();BuyLimDel();}
 
-   if((CountSell!=0) &&(TPnoLots==true)&& ((ReCountSell<CountSell) || (ReCountSell>CountSell))){CalculateTotalSellTP();SellLimDel();}
+   if((TPUpdate==true)&&(CountSell!=0) &&(TPnoLots==true)&& ((ReCountSell<CountSell) || (ReCountSell>CountSell))){CalculateTotalSellTP();SellLimDel();}
 
-if((CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLots))){CalculateTotalBuyTP2();BuyLimDel();}
+if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLots))){CalculateTotalBuyTP2();BuyLimDel();}
 
-   if((CountSell!=0)&&(TPnoLots==false) && ((ReSellLots<SellLots) || (ReSellLots>SellLots))){CalculateTotalSellTP2();SellLimDel();}
+   if((TPUpdate==true)&&(CountSell!=0)&&(TPnoLots==false) && ((ReSellLots<SellLots) || (ReSellLots>SellLots))){CalculateTotalSellTP2();SellLimDel();}
    
    
-   if((TralEnd==true)&&(StartTralCount>=ReCountBuy)){BuyTral();}
-   if((TralEnd==true)&&(StartTralCount>=ReCountSell)){SellTral();}
+   if((BuyTralEnd==true)&&(ReCountBuy!=1)&&(ReCountBuy!=0)&&(BuyStartTralCount<=ReCountBuy)){BuyTral();}
+   if((SellTralEnd==true)&&(ReCountSell!=1)&&(ReCountSell!=0)&&(SellStartTralCount<=ReCountSell)){SellTral();}
+//Проверка размера ТР первого ордера   
+   if((ReCountBuy==1)&&(TPUpdateFirstOrder==true))
+   {
+ for(int i7=0;i7<OrdersTotal();i7++)
+     {
+      // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
+      if(OrderSelect(i7,SELECT_BY_POS)==true)
+        {
+         if((OrderSymbol()==Symbol())&&(OrderType()==OP_BUY)) 
+           {  
+           double CheckB=DoubleToStr((OrderTakeProfit()-OrderOpenPrice()),Digits);
+           if (CheckB!=(TP*Point*k)){
+           double TPBUpd=OrderOpenPrice()+TP*Point*k;
+           Print("Первый ордер Buy выставился с отклонением,правим профит");
+           OrderModify(OrderTicket(),OrderOpenPrice(),OrderStopLoss(),TPBUpd,0,Orange); } 
+           }
+        }
+     }
+   }
+ if(( ReCountSell==1)&&(TPUpdateFirstOrder==true))
+   {
+ for(int i8=0;i8<OrdersTotal();i8++)
+     {
+      if(OrderSelect(i8,SELECT_BY_POS)==true)
+        {
+         if((OrderSymbol()==Symbol())&&(OrderType()==OP_SELL)) 
+           {    double CheckS=DoubleToStr((OrderOpenPrice()-OrderTakeProfit()),Digits);
+           if (CheckS!=(TP*Point*k)){
+           
+           double TPSUpd=OrderOpenPrice()-TP*Point*k;
+            Print("Первый ордер Sell выставился с отклонением,правим профит");
+           OrderModify(OrderTicket(),OrderOpenPrice(),OrderStopLoss(),TPSUpd,0,Orange); } 
+           }
+        }
+     }
+   }   
 
    CountBuy=0;CountSell=0;TotalSlt=0;TotalBLt=0;OrderSwaps=0;total=OrdersTotal();LastBuyPrice=0;LastSellPrice=0;BuyLots=0;SellLots=0;
    for(int i=0;i<total;i++)
@@ -1560,7 +1602,7 @@ if((CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLot
               }
 
             BuyLimitPrice=0;
-            BuyLimitPrice=LastBuyPrice-LevelBuy2*Point*k;
+            BuyLimitPrice=LastBuyPrice-LevelBuy1*Point*k-LevelBuy2*Point*k;
             Print("Открытие третьего(лимитного) ордера на покупку");
             if(IsTradeAllowed()) 
               {
@@ -1797,7 +1839,7 @@ if((CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLot
                  }
               }
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell2*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell1*Point*k+LevelSell2*Point*k;
             Print("Открытие третьего(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -2038,7 +2080,7 @@ if((CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLot
               }
 
             BuyLimitPrice=0;
-            BuyLimitPrice=LastBuyPrice-LevelBuy3*Point*k;
+            BuyLimitPrice=LastBuyPrice-LevelBuy1*Point*k-LevelBuy2*Point*k-LevelBuy3*Point*k;
             Print("Открытие четвертого(лимитного) ордера на покупку");
             if(IsTradeAllowed()) 
               {
@@ -2265,7 +2307,7 @@ if((CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) || (ReBuyLots>BuyLot
                  }
               }
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell3*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell1*Point*k+LevelSell2*Point*k+LevelSell3*Point*k;
             Print("Открытие четвертого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -2533,7 +2575,37 @@ TPB=0;
      }
    return(TPB);
   }  
-  
+ double CalculateTotalSellTP2()
+  {
+   TPS=0;
+   int CountS=0;
+   double SellLots=0;
+   double PriceS=0;
+   for(int isell2Result=0;isell2Result<OrdersTotal();isell2Result++)
+     {
+      // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
+      if(OrderSelect(isell2Result,SELECT_BY_POS)==true)
+        {
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)) {CountS=CountS+1;PriceS=PriceS+OrderOpenPrice()*OrderLots();SellLots=SellLots+OrderLots();}
+        }
+     }
+   if(CountS>1)
+     {
+      TPS=PriceS/SellLots-TP*Point*k;
+      for(int isell4Result=0;isell4Result<OrdersTotal();isell4Result++)
+        { // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
+         if(OrderSelect(isell4Result,SELECT_BY_POS)==true)
+           {
+            if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)) 
+              {
+               RefreshRates();
+               OrderModify(OrderTicket(),OrderOpenPrice(),OrderStopLoss(),TPS,0,Orange); 
+              }
+           }
+        }
+     }
+   return(TPS);
+  }   
 //#Модификация итогового профита ордеров на покупку
 double CalculateTotalBuyTP()
   {
@@ -2617,36 +2689,7 @@ double CalculateTotalSellTP()
    return(TPS);
   }
   
- double CalculateTotalSellTP2()
-  {
-   TPS=0;
-   int CountS=0;
-   double PriceS=0;
-   for(int isell2Result=0;isell2Result<OrdersTotal();isell2Result++)
-     {
-      // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
-      if(OrderSelect(isell2Result,SELECT_BY_POS)==true)
-        {
-         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)) {CountS=CountS+1;PriceS=PriceS+OrderOpenPrice()*OrderLots();SellLots=SellLots+OrderLots();}
-        }
-     }
-   if(CountS>1)
-     {
-      TPS=PriceS/SellLots-TP*Point*k;
-      for(int isell4Result=0;isell4Result<OrdersTotal();isell4Result++)
-        { // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
-         if(OrderSelect(isell4Result,SELECT_BY_POS)==true)
-           {
-            if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)) 
-              {
-               RefreshRates();
-               OrderModify(OrderTicket(),OrderOpenPrice(),OrderStopLoss(),TPS,0,Orange); 
-              }
-           }
-        }
-     }
-   return(TPS);
-  } 
+
   
   
   
@@ -2730,12 +2773,13 @@ double BuyTral()
 {
 SearchLastBuyPrice();
 RefreshRates();
-if ((Ask-LastBuyPrice-(StartTralPoints*Point*k))>0)
+if ((Ask-LastBuyPrice-(BuyStartTralPoints*Point*k))>0)
 {
-Print("Go Tral");
+
 double stp=0;
 double Stop=0;
 int Ticket=0;
+ LastBuyPrice=0;
  for(int ibuySearch2=0;ibuySearch2<OrdersTotal();ibuySearch2++)
      {
       // результат выбора проверки, так как ордер может быть закрыт или удален в это время!
@@ -2743,21 +2787,22 @@ int Ticket=0;
         {
          if(( OrderSymbol()==Symbol()) && (OrderType()==OP_BUY))
            {
-            if(LastBuyPrice==0){LastBuyPrice=OrderOpenPrice();}
+            if(LastBuyPrice==0){LastBuyPrice=OrderOpenPrice();Ticket=OrderTicket();Stop=OrderStopLoss();}
             if(Stop==0){Stop=OrderStopLoss();}
             if(LastBuyPrice>OrderOpenPrice()){LastBuyPrice=OrderOpenPrice();Stop=OrderStopLoss();Ticket=OrderTicket();}
            }
         }
      }
+     OrderSelect(Ticket, SELECT_BY_TICKET);
 if (Stop==NULL)
 {
 OrderSelect(Ticket,SELECT_BY_TICKET);
- stp=LastBuyPrice+StartTralPoints*Point*k;
-OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Blue); 
+ stp=Ask-BuySizeTralPoints*Point*k;
+OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Purple); 
 }     
   else
   { RefreshRates();OrderSelect(Ticket,SELECT_BY_TICKET);
-  if (Ask-(SizeTralPoints*Point*k)>Stop){stp=Ask-(SizeTralPoints*Point*k);OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Blue); 
+  if (Ask-(BuySizeTralPoints*Point*k)>Stop){stp=Ask-(BuySizeTralPoints*Point*k);OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Purple); 
   
                                         }
   }     
@@ -2770,9 +2815,40 @@ OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Blue);
  return(0);}  
 double SellTral()
 {
+
 SearchLastSellPrice();
-if ((LastBuyPrice-Bid-(StartTralPoints*Point*k))>0){}
- return(0);}  
+RefreshRates();
+if ((LastSellPrice-Bid-(SellStartTralPoints*Point*k))>0){
+
+double stp=0;
+double Stop=0;
+int Ticket=0;
+ LastSellPrice=0;
+ for(int isellSearch2=0;isellSearch2<OrdersTotal();isellSearch2++)
+     {
+      if(OrderSelect(isellSearch2,SELECT_BY_POS)==true)
+        {
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL))
+           {
+            if(LastSellPrice==0){LastSellPrice=OrderOpenPrice();Ticket=OrderTicket();Stop=OrderStopLoss();}
+            if(Stop==0){Stop=OrderStopLoss();}
+            if(LastSellPrice<OrderOpenPrice()){LastSellPrice=OrderOpenPrice();Stop=OrderStopLoss();Ticket=OrderTicket();}
+           }
+        }
+     }
+     OrderSelect(Ticket, SELECT_BY_TICKET);
+if (Stop==NULL)
+{
+ stp=Bid+SellSizeTralPoints*Point*k;
+OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Orange); 
+}     
+  else
+  { RefreshRates();OrderSelect(Ticket,SELECT_BY_TICKET);
+  if (Bid+(SellSizeTralPoints*Point*k)<Stop){stp=Bid+(SellSizeTralPoints*Point*k);OrderModify(Ticket,OrderOpenPrice(),stp,OrderTakeProfit(),0,Orange);                                         
+                                         }         
+}
+}
+return(0);}  
   
 //+------------------------------------------------------------------+
 //|                                                                  |
