@@ -1,4 +1,4 @@
-//+------------------------------------------------------------------+
+      //+------------------------------------------------------------------+
 //|                                             SunExpert ver0.1.mq4 |
 //|                                                Alexander Strokov |
 //|                                    strokovalexander.fx@gmail.com |
@@ -13,6 +13,7 @@
 extern string Пapаметры="Настройки советника";
 extern int LotsBuy=15;
 extern int LotsSell=15;
+extern bool TradeWithStop=true;
 extern bool LimitsOn=true;
 extern int NumberLimitOrders=1;
 extern bool TPnoLots=true;
@@ -186,6 +187,10 @@ int start()
            }
         }
      }
+if ((TradeWithStop==true)&&(ReCountBuy>=LotsBuy)){CheckBuyStop();}
+if ((TradeWithStop==true)&&(ReCountSell>=LotsSell)){CheckSellStop();}
+
+
 
    if((TPUpdate==true)&&(CountBuy!=0) &&(TPnoLots==true)&& ((ReCountBuy<CountBuy) || (ReCountBuy>CountBuy))){CalculateTotalBuyTP();BuyLimDel();}
 
@@ -2904,6 +2909,67 @@ double SellLimDel()
      }
    return(Magic_Number);
   }
+  
+  
+  double CheckBuyStop() {
+   int Ticket=0;
+  double FirstBuyPrice=0;
+    double LastBuyPrice=0;
+  double SLFirstOrder=0;
+   for(int iFBSearch=0;iFBSearch<OrdersTotal();iFBSearch++)
+     {
+      if(OrderSelect(iFBSearch,SELECT_BY_POS)==true)
+        {
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_BUY)&& (Magic_Number==OrderMagicNumber()))
+           {
+            if(FirstBuyPrice==0){FirstBuyPrice=OrderOpenPrice();Ticket=OrderTicket();SLFirstOrder=OrderStopLoss();}
+            if(LastBuyPrice==0){LastBuyPrice=OrderOpenPrice();}
+            if(FirstBuyPrice<OrderOpenPrice()){FirstBuyPrice=OrderOpenPrice();SLFirstOrder=OrderStopLoss();Ticket=OrderTicket();}
+            if(LastBuyPrice>OrderOpenPrice()){LastBuyPrice=OrderOpenPrice();}
+           }
+        }
+     }
+     if (SLFirstOrder==NULL){ SLFirstOrder=LastBuyPrice-((FirstBuyPrice-LastBuyPrice)/2)/Point;  
+      OrderSelect(Ticket, SELECT_BY_TICKET); 
+     Print("Ставим стоп первому ордеру");    OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);     }
+   return(0);
+  }
+  
+    double CheckSellStop() {
+   int Ticket=0;
+   double FirstSellPrice=0;
+   double SLFirstOrder=0;
+   double LastSellPrice=0;
+   for(int iFSSearch=0;iFSSearch<OrdersTotal();iFSSearch++)
+     {
+      if(OrderSelect(iFSSearch,SELECT_BY_POS)==true)
+        {
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)&& (Magic_Number==OrderMagicNumber()))
+           {
+            if(FirstSellPrice==0){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();}
+             if(LastSellPrice==0){LastSellPrice=OrderOpenPrice();}
+            if(FirstSellPrice>OrderOpenPrice()){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();}
+            if(LastSellPrice<OrderOpenPrice()){LastSellPrice=OrderOpenPrice();}
+           }
+        }
+     }
+       if (SLFirstOrder==NULL){ SLFirstOrder=LastSellPrice+((LastSellPrice-FirstSellPrice)/2)/Point;  
+      OrderSelect(Ticket, SELECT_BY_TICKET); 
+   Print("Ставим стоп первому ордеру");   OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);  }
+   return(0);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
