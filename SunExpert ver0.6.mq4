@@ -13,11 +13,15 @@
 extern string Пapаметры="Настройки советника";
 extern int LotsBuy=15;
 extern int LotsSell=15;
-extern bool TradeWithStop=true;
+extern string Пapаметры8="Настройки SL";
+extern bool TradeBuyWithStop=true;
+extern int ValueBuySL=40;
+extern bool TradeSellWithStop=true;
+extern int ValueSellSL=40;
 extern bool LimitsOn=true;
 extern int NumberLimitOrders=1;
 extern bool TPnoLots=true;
-extern bool TPUpdate=true; //Не реализовано
+extern bool TPUpdate=true; 
 extern bool TPUpdateFirstOrder=true;
 extern string Пapаметры1="Параметры ордеров";
 extern bool BuyTrade=true;
@@ -187,8 +191,8 @@ int start()
            }
         }
      }
-if ((TradeWithStop==true)&&(ReCountBuy>=LotsBuy)){CheckBuyStop();}
-if ((TradeWithStop==true)&&(ReCountSell>=LotsSell)){CheckSellStop();}
+if ((TradeBuyWithStop==true)&&(ReCountBuy>=LotsBuy)){CheckBuyStop();}
+if ((TradeSellWithStop==true)&&(ReCountSell>=LotsSell)){CheckSellStop();}
 
 
 
@@ -1088,7 +1092,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               }
            }
         }
-      if((BuyLimitInTrade==false) && (NumBLimOrders==0))
+      if((BuyLimitInTrade==false) && (NumBLimOrders==0)&&(BuyTrade==true))
         {
          switch(CountBuy)
            {   case 1 : for(int ibuylim=0;ibuylim<total;ibuylim++) 
@@ -1340,7 +1344,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
 
         }
 
-      if((SellLimitInTrade==false) && (NumSLimOrders==0))
+      if((SellLimitInTrade==false) && (NumSLimOrders==0)&&(SellTrade==true))
         {
 
          switch(CountSell)
@@ -1592,7 +1596,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
            }
         }
 
-      if((NumBLimOrders==1) && (NumberLimitOrders>1))
+      if((NumBLimOrders==1) && (NumberLimitOrders>1)&&(BuyTrade==true))
         {
          switch(CountBuy)
            {   case 1 : for(int ibuylim=0;ibuylim<total;ibuylim++) 
@@ -1830,7 +1834,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
 
            }
         }
-      if((NumSLimOrders==1) && (NumberLimitOrders>1))
+      if((NumSLimOrders==1) && (NumberLimitOrders>1)&&(SellTrade==true))
         {
          switch(CountSell)
            {
@@ -2070,7 +2074,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
            }
 
         }
-      if((NumBLimOrders==2) && (NumberLimitOrders>2))
+      if((NumBLimOrders==2) && (NumberLimitOrders>2)&&(BuyTrade==true))
         {
          switch(CountBuy)
            {   case 1 : for(int ibuylim=0;ibuylim<total;ibuylim++) 
@@ -2298,7 +2302,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
 
 
 
-      if((NumSLimOrders==2) && (NumberLimitOrders>2))
+      if((NumSLimOrders==2) && (NumberLimitOrders>2)&&(SellTrade==true))
         {
          switch(CountSell)
            {
@@ -2920,7 +2924,7 @@ double SellLimDel()
      {
       if(OrderSelect(iFBSearch,SELECT_BY_POS)==true)
         {
-         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_BUY)&& (Magic_Number==OrderMagicNumber()))
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_BUY))
            {
             if(FirstBuyPrice==0){FirstBuyPrice=OrderOpenPrice();Ticket=OrderTicket();SLFirstOrder=OrderStopLoss();}
             if(LastBuyPrice==0){LastBuyPrice=OrderOpenPrice();}
@@ -2929,9 +2933,10 @@ double SellLimDel()
            }
         }
      }
-     if (SLFirstOrder==NULL){ SLFirstOrder=LastBuyPrice-((FirstBuyPrice-LastBuyPrice)/2);  
+ 
       OrderSelect(Ticket, SELECT_BY_TICKET); 
-     Print("Ставим стоп первому ордеру",SLFirstOrder);    OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);     }
+           if (OrderStopLoss()==NULL){ SLFirstOrder=LastBuyPrice-ValueBuySL*Point*k; 
+     Print("Ставим стоп первому ордеру ",SLFirstOrder);    OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);     }
    return(0);
   }
   
@@ -2944,18 +2949,19 @@ double SellLimDel()
      {
       if(OrderSelect(iFSSearch,SELECT_BY_POS)==true)
         {
-         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL)&& (Magic_Number==OrderMagicNumber()))
+         if(( OrderSymbol()==Symbol()) && (OrderType()==OP_SELL))
            {
-            if(FirstSellPrice==0){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();}
+            if(FirstSellPrice==0){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();SLFirstOrder=OrderStopLoss();}
              if(LastSellPrice==0){LastSellPrice=OrderOpenPrice();}
-            if(FirstSellPrice>OrderOpenPrice()){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();}
+            if(FirstSellPrice>OrderOpenPrice()){FirstSellPrice=OrderOpenPrice();Ticket=OrderTicket();SLFirstOrder=OrderStopLoss();}
             if(LastSellPrice<OrderOpenPrice()){LastSellPrice=OrderOpenPrice();}
            }
         }
      }
-       if (SLFirstOrder==NULL){ SLFirstOrder=LastSellPrice+((LastSellPrice-FirstSellPrice)/2);  
+      
       OrderSelect(Ticket, SELECT_BY_TICKET); 
-   Print("Ставим стоп первому ордеру",SLFirstOrder);   OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);  }
+         if (OrderStopLoss()==NULL){ SLFirstOrder=LastSellPrice+ValueSellSL*Point*k;
+   Print("Ставим стоп первому ордеру ",SLFirstOrder);   OrderModify(Ticket,OrderOpenPrice(),SLFirstOrder,OrderTakeProfit(),0,Orange);  }
    return(0);
   }
   
