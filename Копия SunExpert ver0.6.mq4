@@ -60,6 +60,7 @@ extern double LevelBuy18=100;
 extern double LevelBuy19=100;
 extern double LevelBuy20=100;
 extern string Пapаметры5="Уровни открытия ордеров Sell";
+extern double LevelSell1=0;
 extern double LevelSell2=22.5;
 extern double LevelSell3=10;
 extern double LevelSell4=17.5;
@@ -368,7 +369,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                  }
               }
            }
-         if(Ask<(LastBuyPrice-LevelBuy2*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy1*k*Point))
            {
             
             Print("Открытие второго ордера на покупку");
@@ -394,7 +395,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                  {LastSellPrice=OrderOpenPrice();}
               }
            }
-         if(Bid>(LastSellPrice+LevelSell2*k*Point))
+         if(Bid>(LastSellPrice+LevelSell1*k*Point))
            {
             CalculateSellTP();
             Print("Открытие второго ордера на продажу");
@@ -413,7 +414,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy3*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy2*k*Point))
            {
         
             Print("Открытие третьего ордера на покупку");
@@ -432,7 +433,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell3*k*Point))
+         if(Bid>(LastSellPrice+LevelSell2*k*Point))
            {
          
             Print("Открытие третьего ордера на продажу");
@@ -450,7 +451,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy4*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy3*k*Point))
            {
            
             Print("Открытие четвертого ордера на покупку");
@@ -469,7 +470,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell4*k*Point))
+         if(Bid>(LastSellPrice+LevelSell3*k*Point))
            {
             
             Print("Открытие четвертого ордера на продажу");
@@ -488,7 +489,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy5*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy4*k*Point))
            {
             
             Print("Открытие пятого ордера на покупку");
@@ -507,7 +508,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell5*k*Point))
+         if(Bid>(LastSellPrice+LevelSell4*k*Point))
            {
          ;
             Print("Открытие пятого ордера на продажу");
@@ -525,7 +526,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy6*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy5*k*Point))
            {
         
             Print("Открытие шестого ордера на покупку");
@@ -544,7 +545,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell6*k*Point))
+         if(Bid>(LastSellPrice+LevelSell5*k*Point))
            {
             
             Print("Открытие шестого ордера на продажу");
@@ -561,7 +562,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy7*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy6*k*Point))
            {
           
             Print("Открытие седьмого ордера на покупку");
@@ -580,7 +581,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell7*k*Point))
+         if(Bid>(LastSellPrice+LevelSell6*k*Point))
            {
            
             Print("Открытие седьмого ордера на продажу");
@@ -599,7 +600,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy8*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy7*k*Point))
            {
            
             Print("Открытие восьмого ордера на покупку");
@@ -618,7 +619,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell8*k*Point))
+         if(Bid>(LastSellPrice+LevelSell7*k*Point))
            {
             
             Print("Открытие восьмого ордера на продажу");
@@ -637,7 +638,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy9*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy8*k*Point))
            {
            
             Print("Открытие девятого ордера на покупку");
@@ -656,7 +657,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell9*k*Point))
+         if(Bid>(LastSellPrice+LevelSell8*k*Point))
            {
             
             Print("Открытие девятого ордера на продажу");
@@ -674,7 +675,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy10*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy9*k*Point))
            {
             
             Print("Открытие десятого ордера на покупку");
@@ -693,7 +694,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell10*k*Point))
+         if(Bid>(LastSellPrice+LevelSell9*k*Point))
            {
          
             Print("Открытие десятого ордера на продажу");
@@ -712,7 +713,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy11*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy10*k*Point))
            {
             
             Print("Открытие одиннадцатого ордера на покупку");
@@ -731,7 +732,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell11*k*Point))
+         if(Bid>(LastSellPrice+LevelSell10*k*Point))
            {
             
             Print("Открытие одиннадцатого ордера на продажу");
@@ -749,7 +750,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy12*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy11*k*Point))
            {
             
             Print("Открытие двенадцатого ордера на покупку");
@@ -768,7 +769,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell12*k*Point))
+         if(Bid>(LastSellPrice+LevelSell11*k*Point))
            {
             
             Print("Открытие двенадцатого ордера на продажу");
@@ -786,7 +787,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy13*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy12*k*Point))
            {
           
             Print("Открытие тринадцатого ордера на покупку");
@@ -805,7 +806,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell13*k*Point))
+         if(Bid>(LastSellPrice+LevelSell12*k*Point))
            {
             
             Print("Открытие тринадцатого ордера на продажу");
@@ -824,7 +825,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy14*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy13*k*Point))
            {
            
             Print("Открытие четырнадцатого ордера на покупку");
@@ -843,7 +844,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell14*k*Point))
+         if(Bid>(LastSellPrice+LevelSell13*k*Point))
            {
            
             Print("Открытие четырнадцатого ордера на продажу");
@@ -861,7 +862,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy15*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy14*k*Point))
            {
             
             Print("Открытие пятнадцатого ордера на покупку");
@@ -880,7 +881,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell15*k*Point))
+         if(Bid>(LastSellPrice+LevelSell14*k*Point))
            {
             CalculateSellTP();
             Print("Открытие пятнадцатого ордера на продажу");
@@ -898,7 +899,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy16*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy15*k*Point))
            {
           
             Print("Открытие шестнадцатого ордера на покупку");
@@ -917,7 +918,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell16*k*Point))
+         if(Bid>(LastSellPrice+LevelSell15*k*Point))
            {
             
             Print("Открытие шестнадцатого ордера на продажу");
@@ -934,7 +935,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy17*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy16*k*Point))
            {
             
             Print("Открытие семнадцатого ордера на покупку");
@@ -953,7 +954,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell17*k*Point))
+         if(Bid>(LastSellPrice+LevelSell16*k*Point))
            {
             
             Print("Открытие семнадцатого ордера на продажу");
@@ -970,7 +971,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy18*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy17*k*Point))
            {
             
             Print("Открытие восемнадцатого ордера на покупку");
@@ -989,7 +990,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell18*k*Point))
+         if(Bid>(LastSellPrice+LevelSell17*k*Point))
            {
             
             Print("Открытие восемнадцатого ордера на продажу");
@@ -1006,7 +1007,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy19*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy18*k*Point))
            {
             
             Print("Открытие девятнадцатого ордера на покупку");
@@ -1025,7 +1026,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell19*k*Point))
+         if(Bid>(LastSellPrice+LevelSell18*k*Point))
            {
             
             Print("Открытие девятнадцатого ордера на продажу");
@@ -1042,7 +1043,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastBuyPrice();
 
-         if(Ask<(LastBuyPrice-LevelBuy20*k*Point))
+         if(Ask<(LastBuyPrice-LevelBuy19*k*Point))
            {
             
             Print("Открытие двадцатого ордера на покупку");
@@ -1061,7 +1062,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
         {
          SearchLastSellPrice();
 
-         if(Bid>(LastSellPrice+LevelSell20*k*Point))
+         if(Bid>(LastSellPrice+LevelSell19*k*Point))
            {
       
             Print("Открытие двадцатого ордера на продажу");
@@ -1106,7 +1107,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               }
 
             BuyLimitPrice=0;
-            BuyLimitPrice=LastBuyPrice-LevelBuy2*Point*k;
+            BuyLimitPrice=LastBuyPrice-LevelBuy1*Point*k;
             Print("Открытие второго(лимитного) ордера на покупку");
             if(IsTradeAllowed()) 
               {
@@ -1118,7 +1119,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy3*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy2*Point*k;
                Print("Открытие третьего(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1131,7 +1132,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy4*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy3*Point*k;
                Print("Открытие четвертого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1143,7 +1144,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy4*Point*k;
                Print("Открытие пятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1155,7 +1156,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
                Print("Открытие шестого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1167,7 +1168,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
                Print("Открытие седьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1179,7 +1180,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
                Print("Открытие восьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1192,7 +1193,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
                Print("Открытие девятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1204,7 +1205,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
                Print("Открытие десятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1216,7 +1217,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
                Print("Открытие одинадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1229,7 +1230,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1241,7 +1242,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1253,7 +1254,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1266,7 +1267,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1279,7 +1280,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1292,7 +1293,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1305,7 +1306,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1318,7 +1319,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1330,7 +1331,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy20*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1358,7 +1359,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                  }
               }
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell2*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell1*Point*k;
             Print("Открытие второго(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1370,7 +1371,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               {
                SearchLastSellPrice();
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell3*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell2*Point*k;
                Print("Открытие третьего(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1383,7 +1384,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell4*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell3*Point*k;
                Print("Открытие четвертого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1394,7 +1395,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 4 :SearchLastSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell4*Point*k;
             Print("Открытие пятого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1405,7 +1406,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 5 :SearchLastSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
             Print("Открытие шестого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1417,7 +1418,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
                Print("Открытие седьмого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1430,7 +1431,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
                Print("Открытие восьмого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1443,7 +1444,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
                Print("Открытие девятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1456,7 +1457,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
                Print("Открытие десятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1469,7 +1470,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
                Print("Открытие одинадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1482,7 +1483,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1495,7 +1496,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1508,7 +1509,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1521,7 +1522,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1534,7 +1535,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1547,7 +1548,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1560,7 +1561,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1572,7 +1573,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1584,7 +1585,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell20*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1610,7 +1611,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               }
 
             BuyLimitPrice=0;
-            BuyLimitPrice=LastBuyPrice-LevelBuy2*Point*k-LevelBuy3*Point*k;//
+            BuyLimitPrice=LastBuyPrice-LevelBuy1*Point*k-LevelBuy2*Point*k;
             Print("Открытие третьего(лимитного) ордера на покупку");
             if(IsTradeAllowed()) 
               {
@@ -1622,7 +1623,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy4*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy3*Point*k;
                Print("Открытие четвертого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1635,7 +1636,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy4*Point*k;
                Print("Открытие пятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1647,7 +1648,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
                Print("Открытие шестого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1659,7 +1660,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
                Print("Открытие седьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1671,7 +1672,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
                Print("Открытие восьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1683,7 +1684,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
                Print("Открытие девятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1696,7 +1697,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
                Print("Открытие десятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1708,7 +1709,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
                Print("Открытие одиннадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1720,7 +1721,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1733,7 +1734,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1745,7 +1746,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1757,7 +1758,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1770,7 +1771,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1783,7 +1784,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1796,7 +1797,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1809,7 +1810,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1822,7 +1823,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy20*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -1847,7 +1848,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                  }
               }
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell2*Point*k+LevelSell3*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell1*Point*k+LevelSell2*Point*k;
             Print("Открытие третьего(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1859,7 +1860,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               {
                SearchLastLimSellPrice();
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell4*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell3*Point*k;
                Print("Открытие четвертого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1872,7 +1873,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell4*Point*k;
                Print("Открытие пятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1883,7 +1884,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 4 :SearchLastLimSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
             Print("Открытие шестого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1894,7 +1895,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 5 :SearchLastLimSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
             Print("Открытие седьмого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -1906,7 +1907,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
                Print("Открытие восьмого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1919,7 +1920,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
                Print("Открытие девятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1932,7 +1933,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
                Print("Открытие десятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1945,7 +1946,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
                Print("Открытие одиннадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1958,7 +1959,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1971,7 +1972,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1984,7 +1985,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -1997,7 +1998,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2010,7 +2011,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2023,7 +2024,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2036,7 +2037,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2049,7 +2050,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2061,7 +2062,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell20*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2088,7 +2089,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               }
 
             BuyLimitPrice=0;
-            BuyLimitPrice=LastBuyPrice-LevelBuy2*Point*k-LevelBuy3*Point*k-LevelBuy4*Point*k;
+            BuyLimitPrice=LastBuyPrice-LevelBuy1*Point*k-LevelBuy2*Point*k-LevelBuy3*Point*k;
             Print("Открытие четвертого(лимитного) ордера на покупку");
             if(IsTradeAllowed()) 
               {
@@ -2100,7 +2101,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy4*Point*k;
                Print("Открытие пятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2113,7 +2114,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy5*Point*k;
                Print("Открытие шестого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2125,7 +2126,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy6*Point*k;
                Print("Открытие седьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2137,7 +2138,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy7*Point*k;
                Print("Открытие восьмого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2149,7 +2150,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy8*Point*k;
                Print("Открытие девятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2161,7 +2162,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy9*Point*k;
                Print("Открытие десятого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2174,7 +2175,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy10*Point*k;
                Print("Открытие одиннадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2186,7 +2187,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2198,7 +2199,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2211,7 +2212,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2223,7 +2224,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2235,7 +2236,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2248,7 +2249,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2261,7 +2262,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2274,7 +2275,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2287,7 +2288,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimBuyPrice();
 
                BuyLimitPrice=0;
-               BuyLimitPrice=LastBuyPrice-LevelBuy20*Point*k;
+               BuyLimitPrice=LastBuyPrice-LevelBuy19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на покупку");
                if(IsTradeAllowed()) 
                  {
@@ -2315,7 +2316,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                  }
               }
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell2*Point*k+LevelSell3*Point*k+LevelSell4*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell1*Point*k+LevelSell2*Point*k+LevelSell3*Point*k;
             Print("Открытие четвертого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -2327,7 +2328,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
               {
                SearchLastLimSellPrice();
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell4*Point*k;
                Print("Открытие пятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2340,7 +2341,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell5*Point*k;
                Print("Открытие шестого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2351,7 +2352,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 4 :SearchLastLimSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell6*Point*k;
             Print("Открытие седьмого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -2362,7 +2363,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
             case 5 :SearchLastLimSellPrice();
 
             SellLimitPrice=0;
-            SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
+            SellLimitPrice=LastSellPrice+LevelSell7*Point*k;
             Print("Открытие восьмого(лимитного) ордера на продажу");
             if(IsTradeAllowed()) 
               {
@@ -2374,7 +2375,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell8*Point*k;
                Print("Открытие девятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2387,7 +2388,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell9*Point*k;
                Print("Открытие десятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2400,7 +2401,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell10*Point*k;
                Print("Открытие десятого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2413,7 +2414,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell11*Point*k;
                Print("Открытие двенадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2426,7 +2427,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell12*Point*k;
                Print("Открытие тринадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2439,7 +2440,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell13*Point*k;
                Print("Открытие четырнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2452,7 +2453,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell14*Point*k;
                Print("Открытие пятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2465,7 +2466,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell15*Point*k;
                Print("Открытие шестнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2478,7 +2479,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell16*Point*k;
                Print("Открытие семнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2491,7 +2492,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell17*Point*k;
                Print("Открытие восемнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2504,7 +2505,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell18*Point*k;
                Print("Открытие девятнадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
@@ -2517,7 +2518,7 @@ if((TPUpdate==true)&&(CountBuy!=0)&&(TPnoLots==false) && ((ReBuyLots<BuyLots) ||
                SearchLastLimSellPrice();
 
                SellLimitPrice=0;
-               SellLimitPrice=LastSellPrice+LevelSell20*Point*k;
+               SellLimitPrice=LastSellPrice+LevelSell19*Point*k;
                Print("Открытие двадцатого(лимитного) ордера на продажу");
                if(IsTradeAllowed()) 
                  {
