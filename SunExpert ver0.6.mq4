@@ -32,13 +32,13 @@ extern int Magic_Number=3213;
 extern string Пapаметры2="Параметры тралинга для Buy";
 extern bool BuyTralEnd=true;
 extern int BuyStartTralCount=2;
-extern int BuyStartTralPoints=30;
-extern int BuySizeTralPoints=15;
+extern double BuyStartTralPoints=30;
+extern double BuySizeTralPoints=15;
 extern string Пapаметры3="Параметры тралинга для Sell";
 extern bool SellTralEnd=true;
 extern int SellStartTralCount=2;
-extern int SellStartTralPoints=30;
-extern int SellSizeTralPoints=15;
+extern double SellStartTralPoints=30;
+extern double SellSizeTralPoints=15;
 extern string Пapаметры4="Уровни открытия ордеров Buy";
 extern double LevelBuy2=22.5;
 extern double LevelBuy3=10;
@@ -177,7 +177,9 @@ int deinit()
 //+------------------------------------------------------------------+
 int start()
   {
-   
+ 
+ if  (GlobalVariableGet("Greedily")==1){ Comment("Торговля запрещена, переменная Greedily=1"); return(0);}  
+ else {Comment("Советник торгует");}
 //Проверка изменений в советнике   
    ReCountBuy=0;ReCountSell=0;ReBuyLots=0;ReSellLots=0;
    for(int in=0;in<OrdersTotal();in++)
